@@ -255,6 +255,7 @@ body {
   transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   background: rgba(0, 0, 0, 0.2);
+  z-index: 10;
 }
 
 .backdrop.is-hidden{
@@ -275,32 +276,29 @@ body {
   0px 1px 1px rgba(0, 0, 0, 0.14),
   0px 2px 1px rgba(0, 0, 0, 0.2);
   border-radius: 4px;
-  transition-duration: 2000ms;
-  transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1)
 }
 
 .modal-button{
   display: flex;
   position: absolute;
-  justify-content: center;
-  align-items: center;
   width: 30px;
   height: 30px;
   top: 8px;
   right: 8px;
-  border-radius: 50%;
+  align-items: center;
+  justify-content: center;
+
   background: #FFFFFF;
-  cursor: pointer;
   border: 1px solid rgba(0, 0, 0, 0.1);
-  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  border-radius: 50%;
+
+  transition-duration: 250ms;
+  transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1)
 }
 
-.modal-close-icon{
-  position: absolute;
-  left: 22.22%;
-  right: 16.67%;
-  top: 16.67%;
-  bottom: 22.22%;
+.modal-button:hover,
+.modal-button:focus {
+  fill: var(--accent-color);
 }
 
 
@@ -391,7 +389,7 @@ body {
 }
 
 .item-box{
-  position:absolute;
+  position:relative;
   width: 100%;
   height: 70px;
   bottom: 0;
@@ -507,7 +505,7 @@ padding: 27px 0;
 
   transition-property: var(--accent-color);
   transition-duration: 250ms;
-  transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1)
+  transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .team-icon-link:hover,
@@ -774,6 +772,9 @@ padding: 27px 0;
   width: 370px;
   margin-right: 30px;
   margin-bottom: 30px;
+
+  transition-duration: 250ms;
+  transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1)
 }
 
 .work-item a {
