@@ -67,8 +67,19 @@
           Эффективные решения <br />
           для вашего бизнеса
         </h1>
-        <button type="button" class="button-primary">Заказать услугу</button>
+        <button type="button" class="button-primary" data-modal-open>Заказать услугу</button>
       </section>
+
+        <div class="backdrop is-hidden" data-modal>
+          <div class="modal">
+
+            <button class="modal-button" data-modal-close>
+              <svg class="modal-close-icon" width="11" height="11"> 
+                <use href="./images/modal-button.svg" ></use>
+              </svg>
+            </button>
+          </div>
+        </div>
 
       <!--Наши преимущества-->
 
@@ -136,13 +147,27 @@
           <h2 class="our-direction">Чем мы занимаемся</h2>
           <ul class="direction-list">
             <li class="item">
-              <img src="./images/box1.jpg" alt="набор текста" width="370" />
+             <div class="direction-box"> 
+                <img src="./images/box1.jpg" alt="набор текста" width="370" />
+              <div class="item-box">
+                <p>Десктопные приложения</p> </div>
+             </div>
             </li>
             <li class="item">
+              <div class="direction-box">
               <img src="./images/box2.jpg" alt="телефон в руке" width="370" />
+              <div class="item-box">
+                <p>Мобильные приложения</p>
+              </div>
+              </div>
             </li>
             <li class="item">
+              <div class="direction-box">
               <img src="./images/box3.jpg" alt="выбор палитры" width="370" />
+              <div class="item-box">
+                <p>Дизайнерские решения</p>
+              </div>
+              </div>
             </li>
           </ul>
         </div>
@@ -427,5 +452,6 @@
         </div>
       </div>
     </footer>
+    <script src="./js/modal.js"></script>
   </body>
 </html>
