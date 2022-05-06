@@ -13,6 +13,7 @@
   --primari-background-color: #ffffff;
   --secondary-background-color: #f5f4fa;
   --grey-icon-color: #afb1b8;
+
 }
 
 /* RESET */
@@ -108,6 +109,11 @@ body {
   font-size: 14px;
   line-height: 1.14;
   letter-spacing: 0.02em;
+
+  
+   transition-property: var(--accent-color);
+  transition-duration: 250ms;
+  transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1); 
 }
 
 .site-nav .link:hover,
@@ -118,6 +124,24 @@ body {
 .site-nav .link.current {
   color: var(--accent-color);
 }
+
+.item .link{
+  position: relative;
+}
+
+.item .link.current::after{
+  content:"";
+  position: absolute;
+
+  left: 0;
+  bottom: 0;
+  display: block;
+  width: 100%;
+  height: 4px;
+  background-color: var(--accent-color);
+  border-radius: 2px;
+}
+
 
 /* Contact nav */
 
@@ -137,6 +161,10 @@ body {
   font-size: 14px;
   line-height: 1.14;
   letter-spacing: 0.02em;
+
+  transition-property: var(--accent-color);
+  transition-duration: 250ms;
+  transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1)
 }
 
 .contact-nav .contact:hover,
@@ -147,7 +175,8 @@ body {
 .contact-icon {
   fill: currentColor;
   margin-right: 10px;
-}
+  }
+
 
 .contact {
   display: flex;
@@ -164,7 +193,6 @@ body {
   max-width: 1600px;
   justify-content: center;
   margin: 0 auto;
-  /* background-color: #c4c4c4; */
   background: linear-gradient(rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
     url(../images/img-overlay.jpg);
 }
@@ -203,8 +231,17 @@ body {
   color: var(--primari-background-color);
   font-family: inherit;
   cursor: pointer;
+
+  transition-property: var(--accent-color);
+  transition-duration: 250ms;
+  transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);
+
 }
 
+.button-primary:hover,
+.button-primary:focus{
+  background-color: #188CE8;
+}
 /* Advantage */
 
 .advant-section {
@@ -383,6 +420,10 @@ body {
   align-items: center;
   justify-content: center;
   border-radius: 50%;
+
+  transition-property: var(--accent-color);
+  transition-duration: 250ms;
+  transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1)
 }
 
 .team-icon-link:hover,
@@ -392,6 +433,10 @@ body {
 
 .team-icon {
   fill: var(--grey-icon-color);
+
+  transition-property: var(--accent-color);
+  transition-duration: 2500ms;
+  transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1)
 }
 
 .team-icon-link:hover .team-icon,
@@ -413,6 +458,10 @@ body {
   text-align: center;
   letter-spacing: 0.03em;
   margin-bottom: 50px;
+
+  transition-property: var(--accent-color);
+  transition-duration: 250ms;
+  transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1)
 }
 
 .clients-list {
@@ -436,6 +485,10 @@ body {
   align-items: center;
 
   fill: var(--grey-icon-color);
+
+  transition-property: var(--accent-color);
+  transition-duration: 2500ms;
+  transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1)
 }
 
 .clients-link:hover,
@@ -460,12 +513,20 @@ body {
 .address-link {
   color: var(--primari-background-color);
   text-decoration: none;
+
+  transition-property: var(--accent-color);
+  transition-duration: 2500ms;
+  transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1)
 }
 
 .contact-link {
   color: rgba(255, 255, 255, 0.6);
   text-decoration: none;
   font-style: normal;
+
+  transition-property: var(--accent-color);
+  transition-duration: 250ms;
+  transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1)
 }
 
 .address-text {
@@ -529,6 +590,10 @@ body {
   align-items: center;
   justify-content: center;
   border-radius: 50%;
+
+  transition-property: var(--accent-color);
+  transition-duration: 250ms;
+  transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1)
 }
 
 .footer-link:hover,
@@ -556,7 +621,12 @@ body {
   cursor: pointer;
   border-radius: 4px;
   border-color: transparent;
-}
+
+    transition-property: var(--accent-color);
+    transition-duration: 250ms;
+    transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
 
 .button-filter:hover,
 .button-filter:focus {
@@ -651,6 +721,41 @@ body {
   font-size: 18px;
   line-height: 2;
   letter-spacing: 0.06em;
+}
+
+.box{
+position: relative;
+width: 370px;
+height: 294px;
+margin-left: auto;
+margin-right: auto;
+
+overflow: hidden;
+}
+
+.box:hover .overlay {
+  transform: translateY(0);
+}
+
+.overlay{
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+background-color:var(--accent-color);
+z-index: 10;
+
+transform: translateY(-100%);
+transition: transform 250ms ease;
+}
+
+.overlay-text{
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.56;
+  letter-spacing: 0.03em;
+  color: var(--grey-icon-color);
 }
 
 .direction-text {
